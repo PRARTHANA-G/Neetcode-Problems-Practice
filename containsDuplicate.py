@@ -1,5 +1,10 @@
 from typing import List
 
+# Approach: Use a set to track seen numbers
+# Why set: O(1) lookup vs O(n) lookup for list
+# Time: O(n) - single pass through array
+# Space: O(n) - set grows up to size of input
+# Key insight: sets use hashing = instant lookup
 
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
@@ -82,3 +87,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+#seen = []
+# Python checks every single element one by one
+# [1, 2, 3, 4, 5....] → checks 1, then 2, then 3...
+# Time: O(n) for EACH lookup
+# Total: O(n²) → slow
+
+#seen = set()
+# Python uses hashing - goes DIRECTLY to the answer
+# Like a dictionary with keys only
+# Time: O(1) for EACH lookup
+# Total: O(n) → fast
